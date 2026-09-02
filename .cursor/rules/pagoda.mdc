@@ -1,0 +1,106 @@
+---
+description: Pagoda Travel engineering standards — silent-failure rule, auth, responses, validation, logging, pricing, migrations
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "migrations/**/*.sql"
+alwaysApply: true
+---
+
+# Pagoda Travel — engineering standards
+
+Full guide: `CLAUDE.md` at the repo root. This file is the enforced subset.
+
+Next.js 16 App Router · React 19 · TypeScript · Tailwind 4 · Supabase.
+Five portals: `app/{admin,agent,agency,guide}` + operator flows. Business logic lives in flat
+`lib/` modules (~120 of them — grep before adding one). Route handlers stay thin.
+
+## 1. Silent failures are bugs
+
+**A fallback that returns a different result than the caller asked for is a bug, not
+resilience.** If the system cannot do what was requested, return an error the user can read.
+
+Every production incident in this repo has been this shape: a chat "new thread" button that
+returned the existing thread with `ok: true`; a `job_hiring_history` insert that failed
+`23502`, was logged, and still reported the booking as successful; an email marked
+`emailQueued: true` from a promise nobody awaited.
+
+- `void somePromise()` only for genuinely optional side effects — and the caller must **never
+  report success on its behalf**. If the user is told it happened, `await` it.
+- A destructured Supabase `error` that is never read is a review failure.
+- Never widen a `catch` to hide a failure you have not diagnosed.
+
+## 2. Auth
+
+```ts
+const session = await requireSessionActor();        // lib/itinerary-access
+if (!session.ok) return session.response;
+const { userId, role, isAdmin } = session.actor;
+```
+
+Never read `userId` / `role` cookies directly in a new route. **Impersonation** (admin
+overall-access) is read via `readImpersonation()` in `lib/admin-impersonation.ts` — during
+impersonation the `role` cookie says `agent`/`guide` and only `impersonator_id` reveals the
+real actor. Any code deciding *who did this* or *who to notify* must check it.
+
+Access guards: `assertItineraryAccess`, `assertJobItineraryAccess`, `assertUserCanAccessChat`.
+
+## 3. Responses
+
+Use `lib/api-response.ts` (`ok`, `fail`, `unauthorized`, `forbidden`, `notFound`,
+`migrationRequired`). Shape is always `{ ok: true, ... }` or `{ ok: false, error }`. Never
+leak raw DB text to an end user — log it, return something a travel advisor can act on. When
+the schema is behind the code, say so and name the migration.
+
+Most routes still hand-roll `NextResponse.json`. Migrate what you touch; do not sweep working
+routes you have no other reason to open.
+
+## 4. Validation
+
+Parse at the edge with `lib/validate.ts`. Money → `parseMoney`; percentages →
+`parseMarkupPct`; activity types → `canonicalizeActivityTypeLabel`. No `as any` on a request
+body.
+
+## 5. Logging
+
+`lib/ops-log.ts` only — no bare `console.log` in new code. Tags `PagodaBooking` / `PagodaChat`
+/ `PagodaMail` / `PagodaTransfer` / `PagodaAuth`; step names are `noun.verb`
+(`email.sent`, `message.stored`); structured data object, never string interpolation — these
+are grepped in Vercel during incidents. Never log full emails where an id will do, phone
+numbers, tokens, or cookies.
+
+## 6. Pricing
+
+One module: `lib/pagoda-pricing.ts`.
+
+```
+guide net → +commissionMarketplacePct → +commissionAgentPct → +advisor markup % → client price
+```
+
+Commissions live per-guide in `guide_commission_settings`, set at `/admin/commission-settings`,
+and are read **live** on every computation — Tour Library, itinerary lines, confirmation emails
+and PDF must move together. Never hardcode a markup percentage.
+
+## 7. Migrations
+
+Hand-run on Supabase. Idempotent (`IF NOT EXISTS`), dated `YYYYMMDD_description.sql`, header
+comment explaining **why** and what failure it repairs, `COMMENT ON COLUMN` for anything
+non-obvious. Code depending on a new column must degrade with a clear error — production may
+not have run it yet.
+
+## 8. Verification
+
+No test framework. Behaviour that cannot be unit-tested gets a guard script in `scripts/`
+wired into `package.json` (`npm run test:*`). Add one every time you fix a silent failure.
+Before deploy: `npx tsc --noEmit` && `npm run lint` && all guards.
+
+## 9. Style
+
+2-space indent; match the surrounding file for quotes/semicolons (`lib/` is double quotes +
+semicolons, some older `app/api/` routes are single quotes without). Named exports. `type` over
+`interface` for data shapes. Comments explain **why**. Keep route handlers under ~200 lines.
+
+## 10. Known debt — do not widen
+
+`app/agent/edit-itinerary/page.tsx` and `app/agency/edit-itinerary/page.tsx` are near-identical
+and drift constantly. When you change one, check the other.

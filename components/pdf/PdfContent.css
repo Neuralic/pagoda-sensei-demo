@@ -1,0 +1,1428 @@
+.firstPage {
+    background-color: #eae7e0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 100%;
+    min-height: 1123px;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar {
+    padding: 20px;
+}
+
+.vaz-pdf-page {
+    box-sizing: border-box;
+    background-color: red;
+
+    margin: 0 auto;
+    padding: 10mm;
+    /* inner padding you want */
+    /* background-color: #eb094d !important; */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    /* ensure it prints fully and doesn't get cut */
+    overflow: visible !important;
+    page-break-after: avoid;
+
+
+
+}
+
+/* Make sure no child has a white background that covers part of page */
+/* .vaz-pdf-page * {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  } */
+
+.dataPage {
+    padding: 20px;
+    padding-top: 1px;
+    background-color: #EAE7E0;
+    min-height: 1123px;
+}
+
+/* Ensure activities can flow naturally across pages */
+.dataPage .activity-container {
+    page-break-inside: auto;
+    break-inside: auto;
+}
+
+
+
+
+.vaz-pdf-page .mask-group {
+    position: relative;
+    width: 180px;
+    height: 30px;
+    aspect-ratio: 6;
+}
+
+.vaz-pdf-page .frame-2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.vaz-pdf-page .frame-3 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 2px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.vaz-pdf-page .text-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-weight: 400;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.vaz-pdf-page .text-wrapper-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-weight: 600;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.vaz-pdf-page .frame-4 {
+    width: 42px;
+    height: 42px;
+    border-radius: 9999px;
+    background: linear-gradient(0deg,
+            rgba(141, 194, 204, 1) 0%,
+            rgba(141, 194, 204, 1) 100%);
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.vaz-pdf-page .frame-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.vaz-pdf-page .frame-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.vaz-pdf-page .pathfinder-japan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    align-self: stretch;
+    font-weight: 500;
+    color: #b50000;
+    font-size: 16px;
+    letter-spacing: -0.40px;
+    line-height: 16px;
+}
+
+.vaz-pdf-page .ready-set-go-tour {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    font-weight: 500;
+    color: #181818;
+    font-size: 56px;
+    letter-spacing: -0.60px;
+    line-height: 60px;
+}
+
+.vaz-pdf-page .img {
+    position: absolute;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    bottom: 0px;
+    padding: 20px;
+}
+
+
+.vaz-pdf-page .frame-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: start;
+    /*position: absolute;
+    */
+    bottom: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background-image: url(../../public/assets/images/pdf_cover_image.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.vaz-pdf-page .frame-7 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.vaz-pdf-page .frame-8 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.vaz-pdf-page .text-wrapper-3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-weight: 400;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.vaz-pdf-page .text-wrapper-4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-weight: 600;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.vaz-pdf-page .frame-9 {
+    align-self: stretch;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.vaz-pdf-page .div-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7.17px;
+    padding: 5.74px;
+    position: relative;
+    align-self: stretch;
+    background-color: var(--colors-color2);
+    border-radius: 8.6px;
+    aspect-ratio: 1;
+}
+
+.vaz-pdf-page .vector-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.vaz-pdf-page .vector {
+    position: absolute;
+    width: 75.00%;
+    height: 81.25%;
+    top: 6.25%;
+    left: 12.50%;
+}
+
+.vaz-pdf-page .vector-2 {
+    position: absolute;
+    width: 81.25%;
+    height: 81.25%;
+    top: 9.37%;
+    left: 9.38%;
+}
+
+.vaz-pdf-page .frame-10 {
+    color: #e6e1d5;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 647px;
+    display: flex;
+    position: absolute;
+    top: 1060px;
+    left: calc(50% - 323px);
+}
+
+.vaz-pdf-page .text-wrapper-5 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-weight: 400;
+    color: #E6E1D5;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.40px;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.vaz-pdf-page .text-wrapper-6 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-weight: 500;
+    color: var(--colors-color2);
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.40px;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        break-inside: avoid-page !important;
+        background: transparent;
+    }
+    /* Allow splittin for big sections */
+    .activity-container,
+    .description,
+    .guide-profile,
+    .content-block {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    h1, h2, h3, .activity-title {
+        break-after: avoid;
+    }
+
+    /* Allow dataPage and arrivingContent to flow, but keep activity containers together */
+    .dataPage,
+    .arrivingContent {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+    
+    /* Keep activity containers together - prevent breaking across pages */
+    .activity-container {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Keep day header with first activity */
+    .dayFrame {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+    
+    /* Force page break before each day (except first) */
+    .dayFrame.page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+    }
+
+    /* Force page break for activities marked by JavaScript */
+    .activity-container.force-page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+    }
+
+    /* Activity containers should not break - keep entire activity together */
+    /* (This rule is redundant but kept for clarity - main rule is above) */
+
+    /* Prevent breaking activity header */
+    .activity-container .arrival-wrapper {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Prevent breaking images section */
+    .activity-container .activity-images-row {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        margin-bottom: 8px;
+    }
+
+    /* Keep paragraphs together - prevent breaking in middle of paragraph */
+    .activity-container .arrivingContent p {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        orphans: 2 !important;
+        widows: 2 !important;
+    }
+
+    /* Keep entire guide section together - prevent breaking across pages */
+    .activity-container .travelGuide {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    /* Keep guide header with name together */
+    .activity-container .travelGuide .frame-wrapper-4 {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    .activity-container .travelGuide .guideDescription {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    /* Keep guide description paragraphs together */
+    .activity-container .travelGuide .guideDescription p {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+        orphans: 2 !important;
+        widows: 2 !important;
+    }
+
+    /* Keep languages section together */
+    .activity-container .travelGuide .guideDescription span,
+    .activity-container .travelGuide .guideDescription ul {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+    }
+
+    @page: first {
+        margin: 0;
+    }
+
+    @page {
+        size: A4;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        background: #EAE7E0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        background: #EAE7E0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        size: A4 !important;
+        width: 210mm !important;
+        min-height: 297mm !important;
+    }
+
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .vaz-pdf-page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: #EAE7E0 !important;
+    }
+
+}
+
+.dayFrame {
+    margin: 20px 0px;
+    flex-direction: column;
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Force page break before each day (except first) - handled by page-break class in TSX */
+.dayFrame.page-break {
+    page-break-before: always;
+    break-before: page;
+}
+
+.dayFrame .day {
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: "Fira Sans Condensed-Medium", Helvetica;
+    font-weight: 500;
+    color: #2D7DD2;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.40px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dayFrame .arrival-japan {
+    color: #c0301d;
+    text-align: center;
+    letter-spacing: -.4px;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    margin-top: -1px;
+    /* font-family: Fira Sans Condensed-Medium, Helvetica; */
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    display: flex;
+    position: relative;
+}
+
+.dayFrame .date-style {
+    font-size: 20px;
+    font-weight: 500;
+    color: #181818;
+    line-height: 20px;
+}
+
+.dayFrame .arrival-in-tokyo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    /* font-family: "Fira Sans Condensed-Medium", Helvetica; */
+    font-weight: 700;
+    color: #181818;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: -0.40px;
+    line-height: 48px;
+}
+
+.dayFrame .day-activity-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #c0301d;
+    line-height: 32px;
+}
+
+.dayFrame .text-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 648px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.dayFrame .day-activity-date {
+    font-size: 20px;
+    font-weight: 400;
+    color: #181818;
+    line-height: 20px;
+}
+
+.tourList {
+    padding: 20px;
+}
+
+.ArrivalFrame {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 20px;
+    /* min-height: 220px; */
+    background-color: #e6e1d5;
+    padding: 24px;
+    gap: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.ArrivalFrame .frame-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 53px;
+    height: 53px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    position: relative;
+    align-self: stretch;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%);
+}
+
+.ArrivalFrame .frame-wrapper .img-wrapper {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.ArrivalFrame .div-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 53px;
+    height: 53px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    aspect-ratio: 1;
+}
+
+.ArrivalFrame .div {
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px 12px;
+    position: relative;
+    border-radius: 9999px;
+    aspect-ratio: 1;
+}
+
+.ArrivalFrame .vector-wrapper {
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    margin-left: -8.00px;
+    margin-right: -8.00px;
+    aspect-ratio: 1;
+}
+
+.ArrivalFrame .vector {
+    position: absolute;
+    width: 75.78%;
+    height: 75.78%;
+    top: 8.59%;
+    left: 9.38%;
+}
+
+.ArrivalFrame .div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    /* min-height: 220px; */
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.ArrivalFrame .div-3 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.ArrivalFrame .div-wrapper-2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.ArrivalFrame .text-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.ArrivalFrame .div-4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.ArrivalFrame .div-5 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.ArrivalFrame .img-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    font-size: 14px;
+    color: #575757;
+}
+
+.ArrivalFrame .img-wrapper svg {
+    font-size: 14px;
+}
+
+.ArrivalFrame .img {
+    width: 87.50%;
+    top: 0;
+    left: 6.94%;
+    aspect-ratio: 1;
+    position: absolute;
+    height: 87.50%;
+}
+
+.ArrivalFrame .text-wrapper-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -0.50px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #292929;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.ArrivalFrame .div-6 {
+    display: flex;
+    width: 258px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.ArrivalFrame .vector-2 {
+    width: 68.75%;
+    top: 6.25%;
+    left: 15.62%;
+    position: absolute;
+    height: 87.50%;
+}
+
+.ArrivalFrame .arriving-at-either {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 0px 0px 64px;
+    position: relative;
+}
+
+.frame .frame-wrapper {
+    display: flex;
+    align-items: start;
+    gap: 61px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.frame .div {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.frame .div-2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .text-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .div-3 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .div-4 {
+    display: flex;
+    flex-direction: column;
+    width: 754px;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .pathfinder-japan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    margin-top: -1.00px;
+    /* font-family: "Stentiga", "Fira Sans Condensed-Bold", Helvetica; */
+    font-weight: 400;
+    color: #c0301d;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: -0.40px;
+    line-height: 18px;
+}
+
+.frame .japan-trip {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    font-family: "Fira Sans Condensed-Medium", Helvetica;
+    font-weight: 600;
+    color: #181818;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: -0.40px;
+    line-height: 60px;
+}
+
+.frame .div-5 {
+    display: flex;
+    width: 515px;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .div-6 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.frame .img-2 {
+    position: relative;
+    flex: 0 0 auto;
+    height: 38px;
+}
+
+.frame .text-wrapper-3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: var(--colors-primitive-neutral-900);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .div-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7.17px;
+    padding: 5.74px;
+    position: relative;
+    background-color: var(--colors-color2);
+    border-radius: 8.6px;
+}
+
+.frame .vector-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.frame .vector {
+    position: absolute;
+    width: 75.00%;
+    height: 81.25%;
+    top: 6.25%;
+    left: 12.50%;
+}
+
+.frame .vector-2 {
+    position: absolute;
+    width: 81.25%;
+    height: 81.25%;
+    top: 9.37%;
+    left: 9.38%;
+}
+
+.dayPoint {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #292929;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.guideList .frame-wrapper {
+    height: 60px;
+    width: 60px;
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.guideDescription p {
+    font-size: 16px;
+    color: #2a2a2a;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    orphans: 2;
+    widows: 2;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    letter-spacing: 0.005em;
+}
+
+.guideDescription p:last-child {
+    margin-bottom: 0;
+}
+
+.guideDescription span {
+    margin-top: 24px;
+    display: block;
+    font-size: 14px;
+    color: #5a5a5a;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.guideDescription ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.guideDescription ul li {
+    background-color: rgba(163, 0, 0, 0.12);
+    color: #A30000;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    letter-spacing: 0.01em;
+}
+
+.guideHeading {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    flex-direction: row !important;
+}
+
+.guideHeading .guideRating {
+    display: flex;
+    align-items: center;
+    gap: 4;
+}
+
+.guideHeading .guideRating p {
+    color: #2a2a2a;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.guideHeading .guideRating p span {
+    color: #5a5a5a;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.guideList .div-3 {
+    gap: 8;
+}
+
+.guideList .div-3 .text-wrapper-2 {
+    color: #2a2a2a;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* .guideContent .tourGuide:first-of-type {
+  background-color: red;
+}
+
+.guideContent .tourGuide:last-of-type {
+  background-color: yellow;
+} */
+
+.tourGuide.lineBreak {
+    border-top: 1px solid #7D7D7D;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.tourGuide .guideList {
+    background-color: transparent;
+    padding: 0px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+
+.linBreak {
+    width: 100%;
+    height: 1px;
+    background-color: #7D7D7D;
+    margin: 24px 0px;
+}
+
+.arrival-wrapper,
+.arrivingContent,
+.travelGuide,
+.arrivalImage {
+    background-color: #E6E1D5;
+}
+
+/* arrival */
+.arrivalImage {
+    height: 200px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0px 24px;
+}
+
+.arrivalImage img {
+    position: relative !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/* Activity container - prevent breaking across pages, keep activities together */
+.activity-container {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    orphans: 2;
+    widows: 2;
+    margin-bottom: 20px;
+}
+
+/* Force page break for activities that would appear near bottom */
+.activity-container.force-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+}
+
+/* Prevent breaking activity header */
+.activity-container .arrival-wrapper {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* Prevent breaking the activity header */
+.arrival-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 24px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.arrivalTime {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.arrivalTime .arrivalClock {
+    display: flex;
+    align-items: center;
+    gap: 5;
+}
+
+.logo-wrapper {
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEEEC9;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.logo-wrapper img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+}
+
+.arrivalInfo .text-wrapper {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.arrivalClock {
+    font-size: 14px;
+    font-weight: 400;
+    color: #575757;
+}
+
+.arrivalList .arrival {
+    padding: 24px;
+    background-color: #E6E1D5;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.arrival .arrivingContent {
+    padding: 24px;
+    font-size: 16px;
+    color: #1f1f1f;
+    font-weight: 400;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #7D7D7D;
+    line-height: 1.3;
+    letter-spacing: 0.005em;
+}
+
+.arrival .arrivingContent p {
+    margin-bottom: 6px;
+    line-height: 1.3;
+    color: #1f1f1f;
+}
+
+.arrival .arrivingContent p:last-child {
+    margin-bottom: 0;
+}
+
+.arrivingContent {
+    padding: 24px;
+    padding-bottom: 0;
+    font-size: 16px;
+    color: #1f1f1f;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+}
+
+/* Add bottom padding when arrivingContent is the last element in activity-container */
+.activity-container > .arrivingContent:last-child {
+    padding-bottom: 24px;
+}
+
+.arrivingContent p {
+    margin-bottom: 4px;
+    line-height: 1.3;
+    orphans: 3;
+    widows: 3;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: #1f1f1f;
+}
+
+.arrivingContent p:last-child {
+    margin-bottom: 0;
+}
+
+.travelGuide {
+    padding: 24px;
+    padding-top: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid #7D7D7D;
+    break-inside: avoid!important;
+    page-break-inside: avoid!important;
+    margin-top: 0;
+}
+
+.travelGuide .headingName {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1d1b1b;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 8px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.travelGuide .frame-wrapper-4 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.guideName {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8;
+}
+
+.guideName img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.guideName .text-wrapper-3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f1f1f;
+    letter-spacing: 0.01em;
+}
+
+.guideName .text-wrapper-4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #4a4a4a;
+    letter-spacing: 0.01em;
+}
+
+.guideName .pdf-guide-role-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.02em;
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+.guideBox {
+    padding: 24px;
+}
+
+.guide-header-frame {
+    margin-bottom: 40px;
+    page-break-after: avoid;
+}
+
+.guide-content-box {
+    page-break-inside: avoid;
+    margin-top: 0;
+}
+
+.guideContent {
+    padding: 24px;
+    background-color: #E6E1D5;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+/* Ensure guides don't break awkwardly across pages */
+.guideContent .tourGuide {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.guideContent .tourGuide:first-child {
+    margin-top: 0;
+}
+
+@media print {
+    .guide-header-frame {
+        margin-bottom: 40px;
+        page-break-after: avoid;
+    }
+
+    .guide-content-box {
+        page-break-inside: avoid;
+    }
+
+    .guideContent .tourGuide {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+.new_color {
+    color: #c0301d;
+}

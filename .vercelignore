@@ -1,0 +1,33 @@
+# Vercel ignore file
+# Files and directories to exclude from Vercel deployments
+
+# Dependencies
+node_modules
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Environment files (handled by Vercel dashboard)
+.env
+.env.local
+.env.*.local
+
+# Development files
+.DS_Store
+*.log
+.vscode
+.idea
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.git
+.gitignore
+README.md
+SETUP_MACOS.md
+

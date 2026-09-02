@@ -1,0 +1,2 @@
+This is a placeholder file to ensure the `public/assets` folder is tracked.
+Replace or remove this file when you add real assets.

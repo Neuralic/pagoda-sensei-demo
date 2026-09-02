@@ -1,0 +1,27 @@
+{
+  "buildCommand": "NEXT_PRIVATE_SKIP_TURBO=1 pnpm run build",
+  "devCommand": "pnpm run dev",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": "nextjs",
+  "regions": [
+    "iad1"
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_PRIVATE_SKIP_TURBO": "1"
+  },
+  "crons": [
+    {
+      "path": "/api/jobs/sync-board-visibility",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/jobs/no-applicant-alerts",
+      "schedule": "15 * * * *"
+    },
+    {
+      "path": "/api/jobs/release-notifications",
+      "schedule": "30 * * * *"
+    }
+  ]
+}
